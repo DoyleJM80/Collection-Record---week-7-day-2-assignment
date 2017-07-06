@@ -3,8 +3,12 @@ const Comics = require('../models/comics');
 module.exports = {
   list: (req, res) => {
     Comics.find({}).then((results) => {
-      console.log(results);
       res.render('comics/list', {model: results});
+    });
+  },
+  oneComic: (req, res) => {
+    Comics.find({_id: req.params._id}).then((result) => {
+      res.render('comics/oneComic', {model: result});
     });
   },
   create: (req, res) => {
@@ -17,10 +21,12 @@ module.exports = {
     res.redirect('/');
   },
   delete: (req, res) => {
-    Comics.deleteOne({_id: req.params._id});
+    Comics.deleteOne({title: 'Detective Comics'});
     res.redirect('/');
   }
 };
+
+
 
 
 

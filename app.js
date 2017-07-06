@@ -20,15 +20,15 @@ app.set('views', './views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// Comics.find().then((res) =>{
-//   console.log(res);
-// });
+console.log(comicController.list)
 
 app.get('/', comicController.list);
 
+app.get('/:_id', comicController.oneComic);
+
 app.post('/create', comicController.create);
 
-app.post('/delete/:_id', comicController.delete);
+app.post('/delete', comicController.delete);
 
 app.listen(3000, () => {
   console.log('listening');
