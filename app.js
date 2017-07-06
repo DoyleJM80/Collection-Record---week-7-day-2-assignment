@@ -28,7 +28,11 @@ app.get('/:_id', comicController.oneComic);
 
 app.post('/create', comicController.create);
 
-app.post('/delete', comicController.delete);
+app.post('/delete/:_id', comicController.delete);
+
+app.post('/hero', comicController.hero);
+
+app.post('/villian', comicController.villian);
 
 app.listen(3000, () => {
   console.log('listening');

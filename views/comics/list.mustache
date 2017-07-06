@@ -24,8 +24,8 @@
           Issue Number: {{issueNumber}}
         </div>
         <h4>Guest Characters</h4>
-        <form class="" action="/delete" method="post">
-          <input type="hidden" name="delete" value="">
+        <form class="" action="/delete/{{_id}}" method="post">
+          <input type="hidden" name="delete" value="{{_id}}">
           <input type="submit" name="" value="delete">
         </form>
       {{/model}}

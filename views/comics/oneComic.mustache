@@ -15,9 +15,13 @@
           Issue Number: {{issueNumber}}
         </div>
         <h4>Guest Characters</h4>
-        <form class="" action="/delete" method="post">
-          <input type="hidden" name="delete" value="">
-          <input type="submit" name="" value="delete">
+        <form class="" action="/hero" method="post">
+          <input type="text" name="hero" value="" placeholder="Add Hero">
+          <input type="submit" name="" value="Add Hero">
+        </form>
+        <form class="" action="/villian" method="post">
+          <input type="text" name="villian" value="" placeholder="Add Villian">
+          <input type="submit" name="" value="Add Villian">
         </form>
       {{/model}}
     </div>

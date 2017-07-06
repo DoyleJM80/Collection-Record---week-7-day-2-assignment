@@ -21,13 +21,25 @@ module.exports = {
     res.redirect('/');
   },
   delete: (req, res) => {
-    Comics.deleteOne({title: 'Detective Comics'});
-    res.redirect('/');
+    Comics.deleteOne({_id: req.params._id}).then(() => {
+      res.redirect('/');
+    });
+  },
+  hero: (req, res) => {
+    Comics.updateOne().then(() => {
+      res.redirect('/');
+    });
+  },
+  villian: (req, res) => {
+    Comics.updateOne().then(() => {
+      res.redirect('/');
+    });
   }
 };
 
 
-
+// Recipe.updateOne({source: "Grandma"},
+//   {$push: {steps: "Call Grandma and tell her how it was."}})
 
 
 // const comic = new Comics({
