@@ -6,15 +6,29 @@
   </head>
   <body>
     <h1>welcome</h1>
-    {{#model}}
-      <h2>{{title}}</h2>
-      <div class="">
-        Company: {{company}}
-      </div>
-      <div class="">
-        Issue Number: {{issueNumber}}
-      </div>
-      <h4>Guest Characters</h4>
-    {{/model}}
+    <div class="new-comic">
+      <form class="" action="/create" method="post">
+        <input type="text" name="title" value="" placeholder="Title">
+        <input type="text" name="company" value="" placeholder="Company">
+        <input type="text" name="issueNumber" value="" placeholder="Issue Number">
+        <input type="submit" name="" value="Submit">
+      </form>
+    </div>
+    <div class="display-comics">
+      {{#model}}
+        <h2>{{title}}</h2>
+        <div class="">
+          Company: {{company}}
+        </div>
+        <div class="">
+          Issue Number: {{issueNumber}}
+        </div>
+        <h4>Guest Characters</h4>
+        <form class="" action="/delete/{{_id}}" method="post">
+          <input type="hidden" name="delete" value="{{_id}}">
+          <input type="submit" name="" value="delete">
+        </form>
+      {{/model}}
+    </div>
   </body>
 </html>

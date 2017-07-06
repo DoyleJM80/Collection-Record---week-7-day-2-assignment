@@ -26,18 +26,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', comicController.list);
 
+app.post('/create', comicController.create);
+
+app.post('/delete/:_id', comicController.delete);
+
 app.listen(3000, () => {
   console.log('listening');
 });
-
-
-// const comic = new Comics({
-//   title: 'Detective Comics',
-//   company: 'DC',
-//   issueNumber: 27
-// });
-// const guestChrs = {villian: 'Alfred Stryker'};
-// comic.guestChrs.push(guestChrs);
-// comic.save();
-//
-// console.log(comic.toObject());
