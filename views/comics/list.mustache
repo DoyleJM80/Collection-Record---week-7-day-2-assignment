@@ -24,6 +24,11 @@
           Issue Number: {{issueNumber}}
         </div>
         <h4>Guest Characters</h4>
+        <ul>
+        {{#guestChrs}}
+        <li>{{hero}} {{villian}}</li>
+        {{/guestChrs}}
+      </ul>
         <form class="" action="/delete/{{_id}}" method="post">
           <input type="hidden" name="delete" value="{{_id}}">
           <input type="submit" name="" value="delete">

@@ -26,12 +26,20 @@ module.exports = {
     });
   },
   hero: (req, res) => {
-    Comics.updateOne().then(() => {
+    Comics.findOne({_id: req.params._id}).then((result) => {
+      console.log(result);
+      let newHero = {hero: req.body.hero};
+      result.guestChrs.push(newHero);
+      result.save();
       res.redirect('/');
     });
   },
   villian: (req, res) => {
-    Comics.updateOne().then(() => {
+    Comics.findOne({_id: req.params._id}).then((result) => {
+      console.log(result);
+      let newVillian = {hero: req.body.villian};
+      result.guestChrs.push(newVillian);
+      result.save();
       res.redirect('/');
     });
   }

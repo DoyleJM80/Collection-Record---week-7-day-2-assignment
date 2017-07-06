@@ -7,7 +7,7 @@ const comicSchema = new mongoose.Schema({
   guestChrs: [
     {
       hero: {type: String},
-      villian: {type: String, required: true},
+      villian: {type: String},
     }
   ]
 

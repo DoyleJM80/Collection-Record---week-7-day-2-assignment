@@ -15,11 +15,11 @@
           Issue Number: {{issueNumber}}
         </div>
         <h4>Guest Characters</h4>
-        <form class="" action="/hero" method="post">
+        <form class="" action="/hero/{{_id}}" method="post">
           <input type="text" name="hero" value="" placeholder="Add Hero">
           <input type="submit" name="" value="Add Hero">
         </form>
-        <form class="" action="/villian" method="post">
+        <form class="" action="/villian/{{_id}}" method="post">
           <input type="text" name="villian" value="" placeholder="Add Villian">
           <input type="submit" name="" value="Add Villian">
         </form>

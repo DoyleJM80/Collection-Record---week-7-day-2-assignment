@@ -20,7 +20,9 @@ app.set('views', './views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-console.log(comicController.list)
+Comics.find({}).then((result) => {
+  console.log(result);
+});
 
 app.get('/', comicController.list);
 
@@ -30,9 +32,9 @@ app.post('/create', comicController.create);
 
 app.post('/delete/:_id', comicController.delete);
 
-app.post('/hero', comicController.hero);
+app.post('/hero/:_id', comicController.hero);
 
-app.post('/villian', comicController.villian);
+app.post('/villian/:_id', comicController.villian);
 
 app.listen(3000, () => {
   console.log('listening');
